@@ -1,0 +1,25 @@
+{% extends "generic_template.html" %} 
+
+{% block srciptsHead %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+    <div class="container">
+        {% block backblock %}{% endblock  %}
+        <h1>
+            {% block chartTitle%}
+            {% endblock %}
+        </h1>
+           <h3 id="errorMessage"></h3>
+        <div class="plot">
+            <canvas id="myChart"></canvas>
+        </div>
+     
+        
+    </div>
+    </div>
+   
+{% endblock %}

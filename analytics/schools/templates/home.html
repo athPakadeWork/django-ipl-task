@@ -1,0 +1,34 @@
+{% extends "generic_template.html" %} 
+{% block title %}
+    <title>Analytics Platform</title>
+{% endblock %}
+
+{% block content %}
+    <div class="box" style="background: #3f51b5">
+    <div class="container">
+        {% load static%}
+        <h1>Analytics with Chart.js</h1>
+        <div>
+            <div class="list-div" onclick="redirectTo('schools')" >
+                {% load  static %}
+                <img class="icon" src="{% static "icons/school.png"%}" />
+                <h3> Primary School CSV</h3>
+            </div>
+            {% comment %} <div class="list-div" onclick="redirectTo('ipl')" >
+                {% load  static %}
+                <img class="icon" src="{% static "icons/cricket.png"%}" />
+                <h3> Matches CSV </h3>
+            </div> {% endcomment %}
+        </div>
+
+
+    </div>
+    </div>
+   
+{% endblock %}
+
+{% block srciptsBody %}
+    {% load static %}
+    <script src="{% static "scripts/index.js" %}"></script>
+  
+{% endblock %}

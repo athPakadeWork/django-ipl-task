@@ -1,0 +1,18 @@
+{% extends "generic_plot.html" %} 
+{% block backblock %} {% load static%}
+    <a class="btn-back" onclick="redirectTo('schools')"> <img src="{% static "icons/back.png" %}" /> Back </a>
+{% endblock %}
+{% block title %}
+    <title>Schools Per District </title>
+{% endblock %}
+
+{% block chartTitle %}
+Number of Schools Per District
+{% endblock %}
+
+
+
+{% block srciptsBody %}
+    {% load static %}
+    <script src="{% static "scripts/plot_schoolPDistrict.js" %}"></script>
+{% endblock %}

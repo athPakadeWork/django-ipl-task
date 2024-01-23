@@ -1,0 +1,29 @@
+{% extends "generic_template.html" %} 
+{% block title %}
+    <title>School Analytics</title>
+{% endblock %}
+{% block srciptsBody %}
+    {% load static %}
+    <script src="{% static "scripts/index.js" %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="box">
+    <div class="container">
+        <a class="btn-back" onclick="redirectTo('')"> <img src="{% static "icons/back.png" %}" /> Back </a>
+        <h1>School Analytics Data</h1>
+        <div>
+            <div class="list-div" onclick="redirectTo('schools/plotPerDistrict')" >
+                {% load  static %}
+                <img class="icon" src="{% static "icons/chart-simple-solid.svg"%}" />
+                <h3> Number of Schools Per District</h3>
+            </div>
+            <div class="list-div" onclick="redirectTo('schools/plotPerLanguage')" >
+                {% load  static %}
+                <img class="icon" src="{% static "icons/languages.png"%}" />
+                <h3> School Count Per Languages Per District </h3>
+            </div>
+        </div>
+
+    </div>
+    </div>
+{% endblock %}
