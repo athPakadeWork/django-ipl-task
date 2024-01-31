@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: school-task-django
+  name: school-task-django
+  namespace: default
+spec:
+  containers:
+    - name: school-task-django
+      image: school-task-django
+      imagePullPolicy: Never # only for local testing, should be removed for production
+      ports:
+        - containerPort: 8000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: school-task-django
+  name: school-task-django
+  namespace: default
+spec:
+  ports:
+    - port: 8000 # port exposed by the pod/deployment
+      protocol: TCP
+      targetPort: 8000 # port exposed by the intenal
+      nodePort: 30001 # port exposed to internet
+  selector:
+    run: school-task-django
+  sessionAffinity: None
+  type: LoadBalancer # ClusterIP, NodePort, LoadBalancer, ExternalName
